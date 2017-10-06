@@ -1,0 +1,41 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="index.js"></script>
+<script src="encrypt/lib/crypto-js.js"></script>
+<script src="encrypt/lib/jsencrypt.min.js"></script>
+<script src="encrypt/encrypt.js"></script>
+
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <p>Enter data to encript.</p>
+        <div><input type="text" ng-model="data" ng-trim="true" /> <button ng-click="encrypt()">Encrypt</button></div>
+        <div style="font-size:12px; color:brown;">{{errormsg}}</div>
+        <div style="margin-top:10px;">AES Encrypted:
+        </div>
+        <textarea rows="4" cols="50" ng-model="aesEncrypted"></textarea>
+        <div>
+            decrypted data:
+            <div><input type="text" readonly ng-model="aesDecrypted" /></div>
+        </div>
+        <p>encrypt url using rsa</p>
+        <div>
+            url specific key and iv :
+            <div style="margin-top:10px;">
+                {{url}} "{{key}}|{{iv}}"
+            </div>
+        </div>
+        <div>
+            rsa encrypt of key and value:
+            <div style="margin-top:10px;"> <textarea rows="4" cols="50" readonly ng-model="rsaEncriptData"></textarea>
+            </div>
+        </div>
+        <div>
+            rsa decrypt of key and value on server side:
+            <div style="margin-top:10px;"> <textarea rows="4" cols="50" readonly ng-model="rsaDecryptData"></textarea>
+            </div>
+        </div>
+
+
+</body>
+
+</html>
